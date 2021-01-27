@@ -9,13 +9,14 @@
 
 class Tessel {
 
-public:
+private:
     Vector3 v1, v2, v3;
 
+public:
+    Tessel();
+    Tessel(const Vector3 &, const Vector3 &, const Vector3 &);
+    Tessel(const Tessel &);
     Vector3 getNormal();
-
-private:
-
 };
 
 

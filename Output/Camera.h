@@ -11,6 +11,7 @@ class Camera {
 public:
     Vector3 position;
     Vector3 direction;
+    double distanceToScreen;
 
     Camera();
     Camera(Vector3, Vector3, bool);

@@ -10,15 +10,19 @@
 #include <list>
 
 class Object {
-public:
-    virtual std::list<Tessel> getTessel() = 0;
 
 protected:
     Vector3 position;
     Vector3 rotation;
     double scale = 1.;
 
-private:
+public:
+    Object();
+    explicit Object(const Vector3 &);
+    Object(const Vector3 &, double);
+    Object(Vector3, Vector3, double);
+    Object(const Object &);
+    virtual std::list<Tessel> getTessel() = 0;
 };
 
 

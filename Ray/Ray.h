@@ -8,12 +8,14 @@
 #include "Utils/Vector3.h"
 
 class Ray {
-public:
+
+private:
     Vector3 position;
     Vector3 direction;
 
+public:
     Ray();
-    Ray(Vector3, Vector3);
+    Ray(const Vector3 &, const Vector3 &);
     Ray(const Ray &);
 };
 

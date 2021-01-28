@@ -21,9 +21,10 @@ protected:
     virtual void tesselate() = 0;
 
 public:
+    bool shouldComputeTessel = true;
+
     explicit Object(const Vector3 &position = Vector3(), const Vector3 &rotation = Vector3(), double scale = 1);
     Object(const Object &);
-
     std::list<Tessel> getTessels();
 };
 

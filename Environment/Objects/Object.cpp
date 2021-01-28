@@ -9,7 +9,11 @@ Object::Object(const Vector3& position, const Vector3& rotation, double scale) :
 Object::Object(const Object &o) : position(o.position), rotation(o.rotation), scale(o.scale) {}
 
 std::list<Tessel> Object::getTessels() {
-    if (tessels.empty()) tesselate();
+    if (tessels.empty() || shouldComputeTessel)
+    {
+        tesselate();
+        shouldComputeTessel = false;
+    }
     return tessels;
 
 }

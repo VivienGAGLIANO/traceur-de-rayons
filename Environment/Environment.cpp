@@ -7,7 +7,13 @@
 
 Environment::Environment(std::string name, const Camera &camera) : name(std::move(name)), camera(camera) {}
 
-Environment::Environment(const Environment &) {
+Environment::Environment(const Environment &) = default;
 
+std::list<Tessel> Environment::getTessels() {
+    std::list<Tessel> tessels{};
+    for (Object *obj : objects) {
+        tessels.insert(tessels.end(), obj->getTessels().begin(), obj->getTessels().end());
+    }
+    return tessels;
 }
 

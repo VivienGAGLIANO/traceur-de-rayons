@@ -4,11 +4,7 @@
 
 #include "Camera.h"
 
-Camera::Camera() {
-
-}
-
-Camera::Camera(Vector3 position, Vector3 direction, bool lookAt = true) : position(position) {
+Camera::Camera(const Vector3& position, const Vector3& direction, double distanceToScreen, bool lookAt) : position(position), distanceToScreen(distanceToScreen) {
     this->direction = lookAt ? (direction - position).normalized() : direction.normalized();
 }
 

@@ -14,8 +14,7 @@ private:
     Vector3 direction;
 
 public:
-    Ray();
-    Ray(const Vector3 &, const Vector3 &);
+    explicit Ray(const Vector3 &position = Vector3(), const Vector3 &rotation = Vector3());
     Ray(const Ray &);
 };
 

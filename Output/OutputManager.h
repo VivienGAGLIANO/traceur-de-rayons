@@ -8,16 +8,14 @@
 
 class OutputManager {
 public:
-    int lengthDefault = 1920;
-    int widthDefault = 1080;
+    static const int lengthDefault = 1920;
+    static const int widthDefault = 1080;
 
 private:
     int length, width;
 
 public:
-
-    OutputManager();
-    OutputManager(int, int);
+    explicit OutputManager(int length = OutputManager::lengthDefault, int width = widthDefault);
     OutputManager(const OutputManager &);
     void renderScene();
 };

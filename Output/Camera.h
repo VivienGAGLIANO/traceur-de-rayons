@@ -13,8 +13,7 @@ public:
     Vector3 direction;
     double distanceToScreen;
 
-    Camera();
-    Camera(Vector3, Vector3, bool);
+    explicit Camera(const Vector3 &position = Vector3(0, -20, 0), const Vector3 &direction = Vector3(0, 1, 0), double distanceToScreen = 10, bool lookAt = true);
     Camera(const Camera &);
 };
 

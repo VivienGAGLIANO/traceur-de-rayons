@@ -4,15 +4,9 @@
 
 #include "OutputManager.h"
 
-OutputManager::OutputManager() {
-    OutputManager(OutputManager::lengthDefault, OutputManager::widthDefault);
-}
-
 OutputManager::OutputManager(int length, int width) : length(length), width(width) {}
 
-OutputManager::OutputManager(const OutputManager &o) {
-    OutputManager(o.length, o.width);
-}
+OutputManager::OutputManager(const OutputManager &o) : length(o.length), width(o.width) {};
 
 void OutputManager::renderScene() {
 

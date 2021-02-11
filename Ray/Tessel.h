@@ -5,6 +5,7 @@
 #ifndef TRACEUR_DE_RAYONS_TESSEL_H
 #define TRACEUR_DE_RAYONS_TESSEL_H
 
+#include <ostream>
 #include "Environment/Objects/Object.h"
 #include "Utils/Vector3.h"
 
@@ -22,6 +23,8 @@ public:
     Vector3 getNormal();
     Vector3 getVertex(int);
     Vector3 getBarycenter();
+
+    friend std::ostream& operator<<(std::ostream &, const Tessel &);
 };
 
 

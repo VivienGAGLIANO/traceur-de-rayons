@@ -27,3 +27,7 @@ void Cube::tesselate() {
     tessels.emplace_back(Tessel(v6, v5, v7, this));
     tessels.emplace_back(Tessel(v6, v7, v2, this));
 }
+
+Cube::Cube(const Vector3 &position, const Vector3 &rotation, double scale) : Object(position, rotation, scale) {};
+
+Cube::Cube(const Cube &c) : Object(c) {};

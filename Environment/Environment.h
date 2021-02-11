@@ -21,7 +21,9 @@ private:
 public:
     explicit Environment(std::string name = "Default", const Camera &camera = Camera());
     Environment(const Environment &);
-    std::list<Tessel> getTessels();
+    std::list<Tessel> getTessels() const;
+    void addObject(Object *);
+    void addObject(std::list<Object*>);
 };
 
 

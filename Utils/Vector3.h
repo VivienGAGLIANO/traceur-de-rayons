@@ -5,6 +5,7 @@
 #ifndef TRACEUR_DE_RAYONS_VECTOR3_H
 #define TRACEUR_DE_RAYONS_VECTOR3_H
 
+#include <ostream>
 
 class Vector3 {
 public:
@@ -24,8 +25,9 @@ public:
     Vector3 operator ^(const Vector3 &) const; // Cross product
     double operator |(const Vector3 &) const; // Dot product
     friend Vector3 operator *(const double &, const Vector3 &);
-    bool operator==(const Vector3 &) const;
-    bool operator!=(const Vector3 &) const;
+    bool operator ==(const Vector3 &) const;
+    bool operator !=(const Vector3 &) const;
+    friend std::ostream& operator <<(std::ostream &, const Vector3 &);
 };
 
 

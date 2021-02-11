@@ -9,11 +9,20 @@ Environment::Environment(std::string name, const Camera &camera) : name(std::mov
 
 Environment::Environment(const Environment &) = default;
 
-std::list<Tessel> Environment::getTessels() {
+std::list<Tessel> Environment::getTessels() const {
     std::list<Tessel> tessels{};
     for (Object *obj : objects) {
-        tessels.insert(tessels.end(), obj->getTessels().begin(), obj->getTessels().end());
+        std::list<Tessel> objTessel = obj->getTessels();
+        tessels.insert(tessels.end(), objTessel.begin(), objTessel.end());
     }
     return tessels;
+}
+
+void Environment::addObject(Object *obj) {
+    objects.push_back(obj);
+}
+
+void Environment::addObject(std::list<Object *> objList) {
+    objects.insert(objects.end(), objList.cbegin(), objList.cend());
 }
 

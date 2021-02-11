@@ -27,4 +27,11 @@ Vector3 Tessel::getBarycenter() {
     return v0+v1+v2 * ((double)1/3);
 }
 
+std::ostream& operator<<(std::ostream &s, const Tessel &t) {
+    s << "[" << t.v0 << "; \n"
+             << t.v1 << "; \n"
+             << t.v2 << "]";
+    return s;
+}
+
 Tessel::Tessel(const Tessel &) = default;

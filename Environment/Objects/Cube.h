@@ -8,12 +8,13 @@
 
 #include "Object.h"
 
-class Cube : Object {
+class Cube : public Object {
 private:
     void tesselate() override;
 
 public:
-
+    explicit Cube(const Vector3 &position = Vector3(), const Vector3 &rotation = Vector3(), double scale = 1);
+    Cube(const Cube &);
 };
 
 

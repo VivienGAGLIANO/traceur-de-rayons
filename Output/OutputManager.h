@@ -5,6 +5,7 @@
 #ifndef TRACEUR_DE_RAYONS_OUTPUTMANAGER_H
 #define TRACEUR_DE_RAYONS_OUTPUTMANAGER_H
 
+#include "Environment/Environment.h"
 
 class OutputManager {
 public:
@@ -17,7 +18,7 @@ private:
 public:
     explicit OutputManager(int length = OutputManager::lengthDefault, int width = widthDefault);
     OutputManager(const OutputManager &);
-    void renderScene();
+    void renderScene(const Environment &);
 };
 
 
